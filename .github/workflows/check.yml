@@ -1,0 +1,15 @@
+name: Check workflow
+on: [push, pull_request]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run action
+
+      uses: titouan-joseph/AutoDeployGithubToAdkynet@master
+      with:
+        adkynetUsername : ${{ secrets.adkynetUsername }}
+        adkynetPassword : ${{ secrets.adkynetPassword }}
+        adkynetServerName : ${{ secrets.adkynetServerName }}
+        adkynetServerPort : ${{ secrets.adkynetServerPort }}

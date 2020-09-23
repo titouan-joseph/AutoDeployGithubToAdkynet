@@ -1,0 +1,19 @@
+name: 'Auto deploy GitHub to Adkynet'
+description: 'upload code from github to discord server of Adkynet'
+inputs:
+  adkynetUsername:
+    description: 'Username of sftp Adkynet'
+    required: true
+  adkynetPassword:
+    description: 'Password of sftp Adkynet'
+    required: true
+  adkynetServerName:
+    description: 'Hostname of sftp server Adkynet'
+    required: true
+  adkynetServerPort:
+    description: 'Port of sftp server Adkynet'
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
